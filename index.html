@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bootstrap Menu</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link href="https://www.ahlesunnatpak.com/css/style.css" rel="stylesheet" type="text/css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.13.0/beautify-html.min.js"></script>
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+</head>
+<body onload="clock();">
+<nav class="navbar navbar-expand-lg navbar-light bg-dark" style="position: sticky; top: 0; z-index: 100; margin:0; padding:5; background: blue;">
+<a id="homex" class="navbar-brand" href="https://swarupinfotech.github.io">SWARUP INFOTECH</a>
+<button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav">
+<li class="nav-item active xp ">
+<a class="nav-link" href="#" id="home">Home <span class="sr-only">(current)</span></a>
+</li>
+<li class="nav-item xp ">
+<a class="nav-link" href="#" id="item1">Remaining Time | Leap Year</a>
+</li>
+<li class="nav-item xp ">
+<a class="nav-link" href="#" id="item2">Informative Age Calculator</a>
+</li>
+<li class="nav-item xp ">
+<a class="nav-link" href="#" id="item3">Month Days | Current Month</a>
+</li>
+<li class="nav-item xp ">
+<a class="nav-link" href="#" id="item4">Gregorian | Hijri Date Converter</a>
+</li>
+<li class="nav-item xp ">
+<a class="nav-link" href="#" id="item5">Year | Month | Week Info</a>
+</li>
+<li class="nav-item xp ">
+<a class="nav-link" href="#" id="item6">Text Operation Web Tools</a>
+</li>
+<li class="nav-item xp ">
+<a class="nav-link" href="#" id="item7">Tic Tac Toe Game</a>
+</li>
+<li class="nav-item xp ">
+<a class="nav-link" href="#" id="item8">@webkit Animation Cleaner</a>
+</li>
+<li class="nav-item xp ">
+<a class="nav-link" href="#" id="item9">Text Decoration Maker</a>
+</li>
+<li class="nav-item xp ">
+<a class="nav-link" href="#" id="item10">About This App</a>
+</li>
+</ul>
+</div>
+</nav>
+<div class="center-text ppp" id="content">
+<!-- Home Page Content -->
+<div id="page-home">
+<canvas id="cnv"></canvas>
+<br>
+<img src="https://www.ahlesunnatpak.com/../images/icons/decorative divider main.svg" class="center-block t-img" width="100%" height="auto">
+<h1 class="an">CURRENT TIME</h1><br>
+<div class="clock-section"><span id="clockMeridiemDisplay"></span><br><span id="meridiemDisplay"></span></div>
+<img src="https://www.ahlesunnatpak.com/../images/icons/decorative divider main.svg" class="center-block t-img" width="100%" height="auto">
+<h1 class="an">TODAY DATE</h1><br>
+<span id="weekdayDisplay"></span><br>
+<span id="dateDisplay"></span><br>
+<span id="eraDisplay"></span>
+<img src="https://www.ahlesunnatpak.com/../images/icons/decorative divider main.svg" class="center-block t-img" width="100%" height="auto">
+<h1 class="an">ISLAMIC DATE</h1><br>
+<div class="english-date-section"><span id="outputTable"></span></div>
+<img src="https://www.ahlesunnatpak.com/../images/icons/decorative divider main.svg" class="center-block t-img" width="100%" height="auto">
+<h1 class="an">PUNJABI DATE</h1><br>
+<span class="weekday" id="nsWeekday"></span><br>
+<span id="nsDate"></span><br>
+<span>(Nanakshahi Samvat)</span>
+<img src="https://www.ahlesunnatpak.com/../images/icons/decorative divider main.svg" class="center-block t-img" width="100%" height="auto"><br><br>
+</div><!-- Page 1 Content -->
+<div class="ppp" id="page1" style="display: none;">
+<h1 class="an">TIMER</h1><br>
+<div class="text">Time Passed from Midnight Until 12 O'clock at Night</div>
+<table border='2' width='100%' cellspacing='0' cellpadding='5'>
+<tbody>
+<tr>
+<th class="redm">Hours</th>
+<th class="redm">Minutes</th>
+<th class="redm">Seconds</th>
+<th class="redm">Milliseconds</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="red" id="hoursk">Hours</td>
+<td class="red" id="minutes">Minutes</td>
+<td class="red" id="seconds">Seconds</td>
+<td class="red" id="millis">Milliseconds</td>
+</tr>
+</tbody>
+</table>
+<br>
+<div class="text">Remaining Time from Now Until Midnight</div>
+<table border='2' width='100%' cellspacing='0' cellpadding='5'>
+<tbody>
+<tr>
+<th class="redm">Hours</th>
+<th class="redm">Minutes</th>
+<th class="redm">Seconds</th>
+<th class="redm">Milliseconds</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="red" id="hours2x">Hours</td>
+<td class="red" id="minutes2">Minutes</td>
+<td class="red" id="seconds2">Seconds</td>
+<td class="red" id="millis2">Milliseconds</td>
+</tr>
+</tbody>
+</table>
+<img src="https://www.ahlesunnatpak.com/../images/icons/decorative divider main.svg" class="center-block t-img" width="100%" height="auto">
+<h1 class="an">LEAP YEAR</h1><br>
+<div id="leap-year-result"><span id="year"></span><br> <span id="result-text"></span></div>
+<img src="https://www.ahlesunnatpak.com/../images/icons/decorative divider main.svg" class="center-block t-img" width="100%" height="auto">
+<h1 class="an">URDU DATE</h1><br>
+<img id="dynamicImage" width="100%" height="50"><br><br>
+<img src="https://www.ahlesunnatpak.com/../images/icons/decorative divider main.svg" class="center-block t-img" width="100%" height="auto"><br><br>
+</div><!-- Page 2 Content -->
+<div class="ppp" id="page2" style="display: none;">
+<form name="agecalc">
+<div class="container">
+<div class="row mt-5">
+<div class="col text-center">
+<h2 class="an">AGE CALCULATOR</h2><br>
+</div>
+</div>
+<div class="row">
+<div class="col">
+<label for="numberInput">Enter Birth Year</label>
+<input onfocus="this.value=''" class="form-control" type="number" name="year" size="6" maxlength="4" value="2000" oninput="limitInput()" maxlength="4" id="num">
+</div>
+</div>
+<div class="row mt-3">
+<div class="col">
+<label for="selectOption1">Select Birth Month</label>
+<select class="form-control" name="month" size="1">
+<option>01 - January</option>
+<option selected="">02 - February</option>
+<option>03 - March</option>
+<option>04 - April</option>
+<option>05 - May</option>
+<option>06 - June</option>
+<option>07 - July</option>
+<option>08 - August</option>
+<option>09 - September</option>
+<option>10 - October</option>
+<option>11 - November</option>
+<option>12 - December</option>
+</select>
+</div>
+</div>
+<div class="row mt-3">
+<div class="col">
+<label for="selectOption2">Select Birth Day</label>
+<select class="form-control" name="day" size="1">
+<option>01</option>
+<option>02</option>
+<option>03</option>
+<option>04</option>
+<option>05</option>
+<option>06</option>
+<option>07</option>
+<option>08</option>
+<option>09</option>
+<option>10</option>
+<option>11</option>
+<option>12</option>
+<option>13</option>
+<option>14</option>
+<option>15</option>
+<option>16</option>
+<option>17</option>
+<option>18</option>
+<option>19</option>
+<option>20</option>
+<option>21</option>
+<option>22</option>
+<option>23</option>
+<option>25</option>
+<option>26</option>
+<option>27</option>
+<option selected="">28</option>
+<option>29</option>
+<option>30</option>
+<option>31</option>
+</select>
+</div>
+</div>
+<div class="row mt-3">
+<div class="col">
+<input type="button" name="start" value="Calculate" onclick="run();" class="btn btn-primary btn-block">
+</div>
+</div>
+<div class="list-container mt-2">
+<label class="list-label">Selected Date</label>
+<div class="custom-list text-center" id="selectedDate">
+Number 1
+</div>
+</div>
+<div class="list-container mt-2">
+<label class="list-label">Next Birthday</label>
+<div class="custom-list text-center" id="nextBirthday">
+Number 2
+</div>
+<textarea class="form-control" style="width: 100%;height: 280px;" rows="4" name="timealive" disabled></textarea>
+</div>
+</div>
+</form>
+<img src="https://www.ahlesunnatpak.com/../images/icons/decorative divider main.svg" class="center-block t-img" width="100%" height="auto"><br><br>
+</div><!-- Page 3 Content -->
+<div class="fixed" id="page3" style="display: none;">
+<h1 class="an">MONTH DAYS</h1><br>
+<div id="cxYear" class="custom-list cc">Year</div>
+<table border='2' width='100%' cellspacing='0' cellpadding='5'>
+<tbody>
+<tr>
+<th class="redm">January</th>
+<th class="redm">February</th>
+<th class="redm">March</th>
+<th class="redm">April</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="red" id="januaryDays">Hours</td>
+<td class="red" id="februaryDays">Minutes</td>
+<td class="red" id="marchDays">Seconds</td>
+<td class="red" id="aprilDays">Milliseconds</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<th class="redm">May</th>
+<th class="redm">June</th>
+<th class="redm">July</th>
+<th class="redm">August</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="red" id="mayDays">Hours</td>
+<td class="red" id="juneDays">Minutes</td>
+<td class="red" id="julyDays">Seconds</td>
+<td class="red" id="augustDays">Milliseconds</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<th class="redm">September</th>
+<th class="redm">October</th>
+<th class="redm">November</th>
+<th class="redm">December</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="red" id="septemberDays">Hours</td>
+<td class="red" id="octoberDays">Minutes</td>
+<td class="red" id="novemberDays">Seconds</td>
+<td class="red" id="decemberDays">Milliseconds</td>
+</tr>
+</tbody>
+</table>
+<img src="https://www.ahlesunnatpak.com/../images/icons/decorative divider main.svg" class="center-block t-img" width="100%" height="auto">
+<h1 class="an">MONTH & DATE</h1><br>
+<table id="calendar">
+<thead>
+<tr>
+<th colspan="7" id="month-year"></th>
+</tr>
+<tr>
+<th>Sun</th>
+<th>Mon</th>
+<th>Tue</th>
+<th>Wed</th>
+<th>Thu</th>
+<th>Fri</th>
+<th>Sat</th>
+</tr>
+</thead>
+<tbody id="calendar-body">
+</tbody>
+</table>
+<img src="https://www.ahlesunnatpak.com/../images/icons/decorative divider main.svg" class="center-block t-img" width="100%" height="auto"><br><br>
+</div><!-- Page 4 Content -->
+<div id="page4" style="display: none;">
+<div class="container mt-5">
+<h3 class="text-center an">Gregorian to Hijri Calender</h3>
+</div>
+<form name="Hijri">
+<div class="form-group">
+<label for="select2">Select Date:</label>
+<select class="form-control" id="gregorianDay" name="CDay">
+<option value="1" selected>1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+<option value="31">31</option>
+</select>
+</div>
+<div class="form-group">
+<label for="select1">Select Month:</label>
+<select class="form-control" id="gregorianMonth" name="CMonth">
+<option value="1" selected>1. January</option>
+<option value="2">2. February</option>
+<option value="3">3. March</option>
+<option value="4">4. April</option>
+<option value="5">5. May</option>
+<option value="6">6. June</option>
+<option value="7">7. July</option>
+<option value="8">8. August</option>
+<option value="9">9. September</option>
+<option value="10">10. October</option>
+<option value="11">11. November</option>
+<option value="12">12. December</option>
+</select>
+</div>
+<div class="form-group">
+<label for="inputField">Add Year:</label>
+<input type="number" class="form-control" id="gregorianYear" value="2017" name="CYear" placeholder="Enter something" onfocus="this.value=''" oninput="limitxInput()" maxlength="4" maxlength="4">
+</div>
+<button id="myButton" class="btn btn-primary btn-block" onclick="GregToIsl(this.form); IslToGreg(this.form);" value="Convert" name="GtoH">CONVERT</button>
+<br>
+<div class="custom-box" id="GregToIslResult" itemprop="name"></div>
+<br>
+<h6 class="text-center">Probability Of 1 Day Difference. </h6>
+<img src="https://www.ahlesunnatpak.com/../images/icons/decorative divider main.svg" class="center-block t-img" width="100%" height="auto"><br><br>
+<h3 class="text-center an">Hijri to Gregorian Calender</h3>
+<div class="form-group">
+<label for="select2">Select Date:</label>
+<select class="form-control" id="hijriDay" name="HDay">
+<option value="1" selected>1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+</select>
+</div>
+<div class="form-group">
+<label for="select1">Select Month:</label>
+<select class="form-control" id="hijriMonth" name="HMonth">
+<option value="1" selected>1. Muharram</option>
+<option value="2">2. Safar</option>
+<option value="3">3. Rabi Al-Awwal</option>
+<option value="4">4. Rabi Al-Thani</option>
+<option value="5">5. Jumada Al-Awwal</option>
+<option value="6">6. Jumada Al-Thani</option>
+<option value="7">7. Rajab</option>
+<option value="8">8. Shaban</option>
+<option value="9">9. Ramadan</option>
+<option value="10">10. Shawwal</option>
+<option value="11">11. Dhul Qadah</option>
+<option value="12">12. Dhul Hijjah</option>
+</select>
+</div>
+<div class="form-group">
+<label for="inputField">Add Year:</label>
+<input type="number" class="form-control" id="hijriYear" name="HYear" placeholder="Enter something" onfocus="this.value=''" oninput="limitxxInput()" maxlength="4">
+</div>
+<button id="myButtonx" class="btn btn-primary btn-block" onclick="IslToGreg(this.form); GregToIsl(this.form);" value="Convert" name="HtoG">CONVERT</button>
+<br>
+<div class="custom-box" id="IslToGregResult" itemprop="name"></div>
+</form><br>
+<h6 class="text-center">Probability Of 1 Day Difference. </h6>
+<img src="https://www.ahlesunnatpak.com/../images/icons/decorative divider main.svg" class="center-block t-img" width="100%" height="auto"><br><br>
+</div><!-- Page 5 Content -->
+<div id="page5" style="display: none;">
+<div class="container">
+<h4 class="text-center an">Year and Month Information</h4>
+<div class="row justify-content-center">
+<div class="col-md-6">
+<table class="table table-bordered text-center custom-bg-light">
+<thead>
+<tr>
+<th colspan="3"><h2><span class="xxyear" id="currentYear"></span></h2></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Days Passed</strong></td>
+<td><strong>Days Remaining</strong></td>
+</tr>
+<tr>
+<td><span class="yy" id="daysPassed"></span></td>
+<td><span class="yy" id="daysRemaining"></span></td>
+</tr>
+<tr>
+<th colspan="3"><strong>Current Day Number</strong></th>
+</tr>
+<tr>
+<td colspan="3" class="yy" id="currentDayNumber"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<img src="https://www.ahlesunnatpak.com/../images/icons/decorative divider main.svg" class="center-block t-img" width="100%" height="auto">
+<div class="row justify-content-center">
+<div class="col-md-6">
+<table class="table table-bordered text-center custom-bg-blue">
+<thead>
+<tr>
+<th colspan="2"><h2><span class="xxyear" id="yearInfo"></span></h2></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>First Weekday</strong></td>
+<td><strong>Last Weekday</strong></td>
+</tr>
+<tr>
+<td><span class="yy" id="firstWeekday"></span></td>
+<td><span class="yy" id="lastWeekday"></span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<img src="https://www.ahlesunnatpak.com/../images/icons/decorative divider main.svg" class="center-block t-img" width="100%" height="auto">
+<div class="row justify-content-center">
+<div class="col-md-6">
+<table class="table table-bordered text-center custom-bg-green">
+<thead>
+<tr>
+<th colspan="3"><h2><span class="xxyear" id="currentMonth"></span></h2></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>First Day of Month</strong></td>
+<td><strong>Last Day of Month</strong></td>
+</tr>
+<tr>
+<td><span class="yy" id="firstDayOfMonth"></span></td>
+<td><span class="yy" id="lastDayOfMonth"></span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<img src="https://www.ahlesunnatpak.com/../images/icons/decorative divider main.svg" class="center-block t-img" width="100%" height="auto">
+<div class="row justify-content-center">
+<div class="col-md-6">
+<table class="table table-bordered text-center custom-bg-light">
+<thead>
+<tr>
+<th colspan="3"><h2><span class="xxyear" id="yearWeekInfo"></span></h2></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Passed Weeks</strong></td>
+<td><strong>Remaining Weeks</strong></td>
+</tr>
+<tr>
+<td><span class="yy" id="passedWeeks"></span></td>
+<td><span class="yy" id="remainingWeeks"></span></td>
+</tr>
+<tr>
+<th colspan="3"><strong>Current Week Number</strong></th>
+</tr>
+<tr>
+<td colspan="3"><span class="yy" id="currentWeek"></span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<img src="https://www.ahlesunnatpak.com/../images/icons/decorative divider main.svg" class="center-block t-img" width="100%" height="auto"><br><br>
+</div><!-- Page 6 Content -->
+<div id="page6" style="display: none;">
+<div class="container mt-5">
+<h1 class="text-center an">Text Operations</h1>
+<form>
+<div class="form-group">
+<label for="textArea">Enter Text:</label>
+<textarea class="form-control" id="textArea" rows="10" placeholder="Enter text"></textarea>
+</div>
+<div class="btn-group mt-2">
+<button type="button" class="btn btn-primary" onclick="removeBlankLines()">Blank Lines</button>
+<button type="button" class="btn btn-secondary" onclick="removeLeadingSpaces()">Leading Spaces</button>
+<button type="button" class="btn btn-success" onclick="normalizeText()">Normalize</button>
+</div>
+<div class="btn-group mt-2">
+<button type="button" class="btn btn-info" onclick="encodeHTML()">Encode HTML</button>
+<button type="button" class="btn btn-warning" onclick="decodeHTML()">Decode HTML</button> </div>
+<div class="btn-group mt-2">
+<button type="button" class="btn btn-primary" onclick="convertToList('ul')">• List Maker</button>
+<button type="button" class="btn btn-secondary" onclick="convertToList('ol')">01 : List Maker</button> </div>
+<div class="btn-group mt-2">
+<button type="button" class="btn btn-danger" onclick="removeLists('ul')">Remove • UL</button>
+<button type="button" class="btn btn-danger" onclick="removeLists('ol')">Remove 01 : OL</button>
+</div>
+<div class="btn-group mt-2">
+<button type="button" class="btn btn-primary" onclick="removeCssComments()">/* CSS */</button>
+<button type="button" class="btn btn-secondary" onclick="removeHtmlComments()">&lt;!-- HTML --&gt;</button>
+<button type="button" class="btn btn-success" onclick="removeJavaScriptComments()">// JavaScript</button>
+</div>
+<div class="btn-group mt-2">
+<input type="number" class="mt-1" style="width:90px;height: 40px;margin-right: 5px; text-align: center;" id="indentSize" min="1" placeholder="indentSize" value="4">
+<button type="button" class="btn btn-primary" onclick="beautifyHTML()">Beautify HTML</button>
+<button type="button" class="btn btn-info btn-block" onclick="copyText()">Copy Text</button>
+</div>
+</form>
+</div>
+<img src="https://www.ahlesunnatpak.com/../images/icons/decorative divider main.svg" class="center-block t-img" width="100%" height="auto"><br><br>
+</div><!-- Page 7 Content -->
+<div id="page7" style="display: none;">
+<div class="container">
+<div class="container text-center mt-2">
+<h1>TIC TAC TOE</h1>
+</div>
+<div class="btn-group mt-2">
+<p class="playerXWins">X Win: <span id="playerXWins">0</span></p>
+<span class="line">|</span>
+<p class="playerOWins">O Win: <span id="playerOWins">0</span></p>
+<span class="line">|</span>
+<p class="draws">Draws: <span id="draws">0</span></p>
+<span class="line">|</span>
+<p class="currentPlayer">Turn: <span id="currentPlayer">X</span></p>
+<span class="line">|</span>
+<div class="form-check">
+<input onclick="showAlert()" class="form-check-input" type="checkbox" id="computerMode"></div>
+<div class="form-check">
+<input onclick="showAlertx()" class="form-check-input" type="checkbox" id="vibrateMode"></div>
+<p id="gameResult">Who Is Win?</p>
+<div class="game-board">
+<div class="game-cell" data-index="0" onclick="makeMove(0)"></div>
+<div class="game-cell" data-index="1" onclick="makeMove(1)"></div>
+<div class="game-cell" data-index="2" onclick="makeMove(2)"></div>
+<div class="game-cell" data-index="3" onclick="makeMove(3)"></div>
+<div class="game-cell" data-index="4" onclick="makeMove(4)"></div>
+<div class="game-cell" data-index="5" onclick="makeMove(5)"></div>
+<div class="game-cell" data-index="6" onclick="makeMove(6)"></div>
+<div class="game-cell" data-index="7" onclick="makeMove(7)"></div>
+<div class="game-cell" data-index="8" onclick="makeMove(8)"></div>
+</div>
+</div>
+<br>
+<div class="btn-group mt-2">
+<button type="button" class="btn btn-primary" onclick="restartGame()">Restart</button>
+<button type="button" class="btn btn-danger" onclick="newGame()">New Game</button>
+<button type="button" class="btn btn-success" onclick="undoMove()">Undo Move</button>
+</div>
+</div>
+<br>
+<img src="https://www.ahlesunnatpak.com/../images/icons/decorative divider main.svg" class="center-block t-img" width="100%" height="auto"><br><br>
+</div><!-- Page 8 Content -->
+<div id="page8" style="display: none;">
+<div class="container mt-5">
+<h2 class="an">Animation Cleaner</h2>
+<div class="row">
+<div class="col-md-6">
+<div class="form-group">
+<label for="inputTextArea">Input Text</label>
+<textarea class="form-control" id="inputTextArea" rows="5" placeholder="Enter Animate.CSS Code"></textarea>
+</div>
+</div>
+<div class="col-md-6">
+<div class="form-group">
+<label for="outputTextArea">Output Text</label>
+<textarea class="form-control" id="outputTextArea" rows="5" >
+</textarea>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+<button class="btn btn-primary btn-block" id="transformButton">Transform</button>
+</div>
+</div>
+</div>
+<br>
+<img src="https://www.ahlesunnatpak.com/../images/icons/decorative divider main.svg" class="center-block t-img" width="100%" height="auto"><br><br>
+</div><!-- Page 9 Content -->
+<div id="page9" style="display: none;">
+<div class="container mt-5">
+<h2 class="an">Text Decoration</h2>
+<div class="row">
+<div class="col-md-6">
+<label for="inputText" class="form-label">Enter English alphabets:</label>
+<textarea class="form-control" id="inputText" rows="5"></textarea>
+<label for="fontStyle" class="form-label mt-3">Select font style:</label>
+<select class="form-select" id="fontStyle">
+<option value="uppercaseA">𝐀 | 𝐚</option>
+<option value="scriptA">𝑨 | 𝒂</option>
+<option value="specialA">𝐴 | 𝑎</option>
+<option value="specialB">𝓐 | 𝓪</option>
+<option value="specialC">𝕬 | 𝖆</option>
+<option value="specialD">𝔸 | 𝕒</option>
+<option value="specialE">𝗔 | 𝗮</option>
+<option value="specialF">𝘼 | 𝙖</option>
+<option value="regular">A | a (Normal)</option>
+<option value="specialG">𝖠 | 𝖺</option>
+<option value="specialH">𝘈 | 𝘢</option>
+<option value="specialI">𝙰 | 𝚊</option>
+</select>
+<button class="btn btn-primary btn-block mt-3" onclick="convertText()">Convert</button>
+</div>
+<div class="col-md-6">
+<label for="outputText" class="form-label mt-4">Converted Text:</label>
+<textarea class="form-control" id="outputText" rows="5" readonly></textarea>
+<button class="btn btn-success btn-block mt-3" onclick="copyToClipboard()">Copy</button>
+</div>
+</div>
+</div>
+<br>
+<img src="https://www.ahlesunnatpak.com/../images/icons/decorative divider main.svg" class="center-block t-img" width="100%" height="auto"><br><br>
+</div><!-- Page 10 Content -->
+<div id="page10" style="display: none;">
+<div id="biaoti">
+    <h4 style="font-weight: normal">I have created this code with great difficulty over the course of seven days. This code was developed based on a friend's request, and the JavaScript code has been optimized. It's functioning correctly, so I thought I would share it with friends.
+
+In this code, I have added many options, which you can read about in detail below.</h4>
+</div>
+
+<div class="neirong">
+    <h4>1. Main Home Screen</h4>
+    <p>The current home screen contains an analog clock, a digital clock, the current Gregorian date, the current Hijri date, and the current Punjabi date, all placed on a single page for easy reference to the current time and date.</p>
+    <p>In addition, the next page also displays more timers, indicating the time that has passed since midnight and the time remaining until midnight. Furthermore, there's a leap year indicator to easily determine if the current year is a leap year or not. Additionally, both Hijri and Gregorian dates are provided in the Urdu language for your convenience.</p>
+    <div class="item"></div>
+
+    <h4>2. Age Calculator</h4>
+    <p>Furthermore, an age calculator has been added, allowing you to easily view the total elapsed time of your life. In this age calculator, you can select a date, and it will show you which day of the week it was on that date. You can also see when your next birthday will be and on which day of the week. Additionally, you can view how many years, months, weeks, days, hours, minutes, seconds, and milliseconds have passed in your life, as well as how much time is left until your next birthday.</p>
+    <p>Additionally, on the next page, you can also see the total number of days in each month for the current year, along with the name of the current month and the current date.</p>
+    <div class="item"></div>
+
+    <h4>3. Gregorian to Hijri Calculator</h4>
+    <p>With the Gregorian calendar and Hijri calendar calculator, you can easily convert Gregorian dates to Hijri dates and vice versa. It provides you with the date in both calendars, including the month, day, year, and the day of the week.</p>
+    <p>On the next page, you can see how many days have passed and how many are remaining in the current year. You can also find out the current day's number within the year.
+
+Additionally, you can determine which day of the week is the first and last day of the current year, as well as the first and last day of the current month.
+
+Furthermore, you can check how many weeks have passed and how many are left in the current year, along with the week number for the current week.</p>
+    <div class="item"></div>
+
+    <h4>4. Text Web Tools</h4>
+    <p>
+
+1. Blank Line Remover Button: Removes blank lines from the text.<br><br>
+2. Leading Space Remover Button: Removes extra leading spaces from lines of text.<br><br>
+3. Normalize Button: Normalizes words by reducing extra spaces and optimizing their placement.<br><br>
+4. Indent Code Button: Indents HTML code and CSS code.<br><br>
+5. List Maker Buttons: Adds and removes bullet or numbered lists.<br><br>
+6. Comment Removal Buttons: Removes comments from HTML, CSS, and JavaScript code.<br><br>
+7. Beautify Button: Beautifies HTML code to make it more readable and organized.<br><br>
+8. Copy Button: Copies selected code to the clipboard.<br><br>
+
+</p>
+    <div class="item"></div>
+
+    <h4>5. Tic Tac Toe Game</h4>
+    <p>
+1. "Number of Games Won" Option: This option tells you how many games each team has won.<br><br>
+2. "Number of Games Drawn" Option: This option informs you about the number of games that have ended in a draw.<br><br>
+3. "Whose Turn to Play" Option: This option indicates whose turn it is to play during the game.<br><br>
+4. "Play Against the Computer" Option: You can choose this option to play against the computer.<br><br>
+5. "Vibrate on Win and Draw" Option: This option enables vibrating the screen as a notification when you win or the game ends in a draw.<br><br>
+6. "Highlight All Moves of the Winner" Option: This option highlights all moves (or turns) of the winning player.<br><br>
+7. "Restart Game Button": This button restarts the game, but the count numbers remain the same.<br><br>
+8. "New Game Button": This button starts a new game with all count numbers reset to zero.<br><br>
+9. "Undo Button": This button is added to eliminate incorrect moves.<br><br>
+
+</p>
+    <ul class="ul1"></ul>
+
+    <div class="item"></div>
+
+    <h4>6. Animation Cleaner & Text Decoration</h4>
+    <p>You can use an animation cleaner to paste a file from your animation into a text area and click a button. This action will remove all code and lines such as @webkit-keyframes, -webkit, -mz, etc., making the file simpler and easier to work with."</p>
+  <p>You can style sample words with text decoration. First, type your name in the text area, then select a font, and click the button. Your name will convert in the second text area with stylish design, which you can easily copy and share anywhere.</p>
+    <ul class="ul1">
+
+    </ul>
+</div>
+</div>
+</div>
+<audio controls>
+    <source src="horse.ogg" type="audio/ogg">
+    <source src="1.mp3" type="audio/mpeg">
+  Click here to play music!!
+  </audio>
+  
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+const _0x2af7fa=_0x46c0;(function(_0x12bb6b,_0x3eb035){const _0x26080b=_0x46c0,_0x5857e2=_0x12bb6b();while(!![]){try{const _0x29b718=parseInt(_0x26080b(0x27c))/0x1+parseInt(_0x26080b(0x1e9))/0x2*(-parseInt(_0x26080b(0x21d))/0x3)+parseInt(_0x26080b(0x272))/0x4+parseInt(_0x26080b(0x1fa))/0x5+-parseInt(_0x26080b(0x25f))/0x6+-parseInt(_0x26080b(0x1ce))/0x7+parseInt(_0x26080b(0x29f))/0x8;if(_0x29b718===_0x3eb035)break;else _0x5857e2['push'](_0x5857e2['shift']());}catch(_0x23bd1e){_0x5857e2['push'](_0x5857e2['shift']());}}}(_0x40a7,0xcf07b));function showPage(_0x500353){const _0x43da0b=_0x46c0;$(_0x43da0b(0x288))[_0x43da0b(0x213)](),$('#'+_0x500353)['show']();}$(_0x2af7fa(0x23a))['on'](_0x2af7fa(0x1d9),function(){const _0x497e84=_0x2af7fa;$(_0x497e84(0x1c2))['collapse'](_0x497e84(0x213));}),$(_0x2af7fa(0x1e3))['on'](_0x2af7fa(0x1d9),function(){showPage('page-home');}),$(_0x2af7fa(0x226))['on'](_0x2af7fa(0x1d9),function(){const _0x207f16=_0x2af7fa;showPage(_0x207f16(0x27e));}),$('#item1')['on']('click',function(){const _0x162f61=_0x2af7fa;showPage(_0x162f61(0x1ef));}),$('#item2')['on'](_0x2af7fa(0x1d9),function(){const _0x17845b=_0x2af7fa;showPage(_0x17845b(0x1e6));}),$(_0x2af7fa(0x1f9))['on']('click',function(){const _0x1fa9bc=_0x2af7fa;showPage(_0x1fa9bc(0x26c));}),$(_0x2af7fa(0x296))['on'](_0x2af7fa(0x1d9),function(){const _0x2e98ed=_0x2af7fa;showPage(_0x2e98ed(0x1dc));}),$(_0x2af7fa(0x285))['on'](_0x2af7fa(0x1d9),function(){const _0x3c4b17=_0x2af7fa;showPage(_0x3c4b17(0x24f));}),$(_0x2af7fa(0x1d5))['on'](_0x2af7fa(0x1d9),function(){const _0x216233=_0x2af7fa;showPage(_0x216233(0x24b));}),$(_0x2af7fa(0x211))['on']('click',function(){const _0x2198e3=_0x2af7fa;showPage(_0x2198e3(0x26b));}),$('#item8')['on'](_0x2af7fa(0x1d9),function(){const _0x319d4e=_0x2af7fa;showPage(_0x319d4e(0x222));}),$(_0x2af7fa(0x1f7))['on']('click',function(){const _0x502c2c=_0x2af7fa;showPage(_0x502c2c(0x1bf));}),$(_0x2af7fa(0x1db))['on'](_0x2af7fa(0x1d9),function(){showPage('page10');}),$(_0x2af7fa(0x1f6))['on'](_0x2af7fa(0x1d9),function(){const _0x4a4985=_0x2af7fa;var _0x596f57=$(_0x4a4985(0x266))[_0x4a4985(0x244)]();showPage(_0x596f57);});function updateClock(){const _0x4563c3=_0x2af7fa,_0xbd6dcb=new Date();let _0x290a50=_0xbd6dcb['getHours'](),_0x671baa=_0xbd6dcb[_0x4563c3(0x22d)](),_0x241f33=_0xbd6dcb['getSeconds'](),_0x59345b=_0x290a50>=0xc?'PM':'AM';_0x290a50=_0x290a50%0xc||0xc;const _0x26cfef=String(_0x290a50)['padStart'](0x2,'0')+_0x4563c3(0x2a9)+String(_0x671baa)[_0x4563c3(0x217)](0x2,'0')+_0x4563c3(0x2a9)+String(_0x241f33)[_0x4563c3(0x217)](0x2,'0')+'\x20'+_0x59345b;document[_0x4563c3(0x1d1)](_0x4563c3(0x28a))['innerHTML']=_0x26cfef,_0x59345b==='AM'?document[_0x4563c3(0x1d1)](_0x4563c3(0x251))[_0x4563c3(0x1da)]='(Ante\x20Meridiem)':document['getElementById']('meridiemDisplay')[_0x4563c3(0x1da)]=_0x4563c3(0x243);}updateClock(),setInterval(updateClock,0x3e8);function _0x40a7(){const _0x276e3e=['December','cxYear','page2','GregToIslResult','replace','2RUrIeI','transformButton','Leading\x20Spaces\x20Removed!','preventDefault','It\x27s\x20a\x20draw!','color','page1','warning','vibrateMode','CDay','Maghar\x20(9)','Text\x20Normalized!','Sawan\x20(5)','#home-showButton','#item9','<span\x20style=\x22font-size:\x2018px;\x20color:\x20blue;\x22>','#item3','126605jBDRVV','Vibrate\x20Mode\x20OFF','reduce','success','Blank\x20lines\x20have\x20been\x20removed.','currentPlayer','dateDisplay','floor','October','\x20AD','playerOWins','\x20<span\x20id=\x27datex\x27>','Rajab','calendar-body','includes','Sunday','</span>\x20<br>\x20','\x20:\x20','Computer\x20Mode\x20ON','currentMonth','</span>\x20<br><span\x20id=\x27hijri\x27>','innerHTML','.xp','#item7','100%','hide','Shukravar','Monday','\x20<br>\x20Is\x20Converted\x20To\x20<br>\x20<span\x20id=\x27datex\x27>\x20','padStart','hijriYear','error','weekdayDisplay','forEach','</span>\x20','4751898ssaDOV','filter','btn-custom-ok','Shanivar','myButtonx','page8','draws','Al-ʾArbiʿāʾ','active-item','#homex','Who\x20Is\x20Win?','>\x20and\x20list\x20items\x20removed.','August','substring','currentWeek','Bhadon\x20(6)','getMinutes','getDay','\x20<span\x20id=\x27weekdayx\x27>','getTime','September','indentSize','JavaScript\x20comments\x20have\x20been\x20removed.','classList','map','addClass','removeClass','Tuesday','Ravivar','.nav-link','Shawwāl','Jumada\x20Al-Thani','Converted\x20to\x20','change','Shaʽban','Chet\x20(1)','getFullYear','CMonth','(Post\x20Meridiem)','val','style','addEventListener','HTML\x20code\x20has\x20been\x20beautified.','Budhvar','Jeth\x20(3)','February','page6','<span\x20id=\x27weekdayx\x27>','Assu\x20(7)','\x20wins!','page5','backgroundColor','meridiemDisplay','March','getMonth','Rabiʽ\x20Al-Thani','push','nsWeekday','firstWeekday','Is\x20a\x20Leap\x20Year','(Anno\x20Domini)','passedWeeks','Failed\x20to\x20beautify\x20HTML\x20code.','currentDayNumber','month-year','innerText','7838472lkVRZs','current-date','\x20AH\x20</span><br>\x20(After\x20Hijra)','</span>\x20<span\x20id=\x27monthx\x27>\x20','Wednesday','.game-cell','HYear','#selectPage','daysPassed','lastDayOfMonth','<span\x20id=\x27datex\x27>','fire','page7','page3','slice','<span\x20style=\x22font-size:\x2024px;\x20color:\x20red;\x22>','year','getDate','HTML\x20entities\x20have\x20been\x20decoded.','1449640rEiMCs','9999','checked','Saturday','\x20NS','CYear','Ḏū\x20Al-Qaʿdah','vibrate','HMonth','</span>','67916vnlHuX','execCommand','page-home','•\x20List','\x20<span\x20id=\x27datex\x27>\x20','Comments\x20Removed!','long','Only\x204\x20Digits.','June','#item5','indexOf','div','#content\x20>\x20div','ceil','clockMeridiemDisplay','Friday','remainingWeeks','join','HTML\x20Beautified!','HTML\x20Encoded!','gameResult','createElement','January','yearWeekInfo','Ramadan','July','#item4','querySelector','Safar','num','[data-index=\x22','April','Jumada\x20Al-Awwal','</span>\x20<span\x20id=\x27yearx\x27>\x20','pop','31757256iqmnlx','blue','gregorianYear','toLowerCase','Al-Jumʿah','</span>\x20<span\x20id=\x27monthx\x27>','HDay','yellow','HTML\x20comments\x20have\x20been\x20removed.','computerMode','\x20<span\x20class=\x22blinking-colon\x22>:</span>\x20','IslToGregResult','Al-Khamīs','inputTextArea','page9','value','May','.navbar-collapse','length','textArea','Phagun\x20(12)','nsDate','November','result-text','every','trim','split','currentYear','Thursday','4808517pqybKj','Ḏū\x20Al-Ḥijjah','HTML\x20Decoded!','getElementById','@-webkit-keyframes','Harh\x20(4)','daysRemaining','#item6','copy','</span>\x20<br>\x20Is\x20Converted\x20To\x20<br>\x20<span\x20id=\x27monthx\x27>\x20','Guruvar','click','textContent','#item10','page4','As-Sabt','lastWeekday','Text\x20has\x20been\x20normalized.','ready','startsWith','</span>\x20<br>\x20<span\x20id=\x27datex\x27>\x20','#home'];_0x40a7=function(){return _0x276e3e;};return _0x40a7();}function _0x46c0(_0x673c43,_0x157629){const _0x40a79a=_0x40a7();return _0x46c0=function(_0x46c08b,_0x4dd0f0){_0x46c08b=_0x46c08b-0x1bc;let _0x2aa70b=_0x40a79a[_0x46c08b];return _0x2aa70b;},_0x46c0(_0x673c43,_0x157629);}function updateDate(){const _0x3d3314=_0x2af7fa,_0x11035d=new Date(),_0xe4fc25=String(_0x11035d[_0x3d3314(0x270)]())[_0x3d3314(0x217)](0x2,'0'),_0x3d35ef=[_0x3d3314(0x292),_0x3d3314(0x24a),'March',_0x3d3314(0x29b),_0x3d3314(0x1c1),_0x3d3314(0x284),'July','August',_0x3d3314(0x231),_0x3d3314(0x202),_0x3d3314(0x1c7),_0x3d3314(0x1e4)],_0x62ed84=_0x3d35ef[_0x11035d[_0x3d3314(0x253)]()],_0x40873e=_0x11035d[_0x3d3314(0x241)](),_0x478981=[_0x3d3314(0x209),_0x3d3314(0x215),_0x3d3314(0x238),_0x3d3314(0x263),'Thursday',_0x3d3314(0x28b),_0x3d3314(0x275)],_0x57ec98=_0x478981[_0x11035d[_0x3d3314(0x22e)]()],_0x357086=_0x3d3314(0x259);document[_0x3d3314(0x1d1)](_0x3d3314(0x21a))[_0x3d3314(0x1da)]=_0x57ec98,document['getElementById'](_0x3d3314(0x200))['textContent']=_0xe4fc25+'\x20'+_0x62ed84+'\x20'+_0x40873e+_0x3d3314(0x203),document[_0x3d3314(0x1d1)]('eraDisplay')['textContent']=_0x357086;}updateDate();function gmod(_0xfd4191,_0x579a59){return(_0xfd4191%_0x579a59+_0x579a59)%_0x579a59;}function kuwaiticalendar(_0x2dc21b){const _0x380a12=_0x2af7fa;var _0x2ed762=new Date();_0x2dc21b&&(adjustmili=0x3e8*0x3c*0x3c*0x18*_0x2dc21b,todaymili=_0x2ed762[_0x380a12(0x230)]()+adjustmili,_0x2ed762=new Date(todaymili));day=_0x2ed762[_0x380a12(0x270)](),month=_0x2ed762[_0x380a12(0x253)](),year=_0x2ed762[_0x380a12(0x241)](),m=month+0x1,y=year;m<0x3&&(y-=0x1,m+=0xc);a=Math[_0x380a12(0x201)](y/0x64),b=0x2-a+Math[_0x380a12(0x201)](a/0x4);if(y<0x62f)b=0x0;if(y==0x62e){if(m>0xa)b=-0xa;if(m==0xa){b=0x0;if(day>0x4)b=-0xa;}}jd=Math[_0x380a12(0x201)](365.25*(y+0x126c))+Math[_0x380a12(0x201)](30.6001*(m+0x1))+day+b-0x5f4,b=0x0;jd>0x231518&&(a=Math['floor']((jd-1867216.25)/36524.25),b=0x1+a-Math[_0x380a12(0x201)](a/0x4));bb=jd+b+0x5f4,cc=Math[_0x380a12(0x201)]((bb-122.1)/365.25),dd=Math[_0x380a12(0x201)](365.25*cc),ee=Math['floor']((bb-dd)/30.6001),day=bb-dd-Math[_0x380a12(0x201)](30.6001*ee),month=ee-0x1;ee>0xd&&(cc+=0x1,month=ee-0xd);year=cc-0x126c,wd=gmod(jd+0x1,0x7)+0x1,iyear=0x2987/0x1e,epochastro=0x1db9b4,epochcivil=0x1db9b5,shift1=8.01/0x3c,z=jd-epochastro,cyc=Math[_0x380a12(0x201)](z/0x2987),z=z-0x2987*cyc,j=Math['floor']((z-shift1)/ iyear),iy=0x1e*cyc+j,z=z-Math['floor'](j*iyear+shift1),im=Math['floor']((z+28.5001)/29.5);if(im==0xd)im=0xc;id=z-Math[_0x380a12(0x201)](29.5001*im-0x1d);var _0x461bde=new Array(0x8);return _0x461bde[0x0]=day,_0x461bde[0x1]=month-0x1,_0x461bde[0x2]=year,_0x461bde[0x3]=jd-0x1,_0x461bde[0x4]=wd-0x1,_0x461bde[0x5]=id-0x2,_0x461bde[0x6]=im-0x1,_0x461bde[0x7]=iy,_0x461bde;}function writeIslamicDate(_0x45fc7a){const _0x10dfea=_0x2af7fa;var _0x2884ba=new Array('Al-ʾAḥad','Al-Ithnayn','Ath-Thulāthāʾ',_0x10dfea(0x224),_0x10dfea(0x1bd),_0x10dfea(0x2a3),_0x10dfea(0x1dd)),_0x1a2ade=new Array('Muḥarram',_0x10dfea(0x298),'Rabīʽ\x20Al-Awwal',_0x10dfea(0x254),_0x10dfea(0x29c),_0x10dfea(0x23c),_0x10dfea(0x206),_0x10dfea(0x23f),_0x10dfea(0x294),_0x10dfea(0x23b),_0x10dfea(0x278),_0x10dfea(0x1cf)),_0x40b9d9=kuwaiticalendar(_0x45fc7a),_0x23fadd='\x20<span\x20id=\x27xpp\x27>'+_0x2884ba[_0x40b9d9[0x4]]+_0x10dfea(0x20e)+_0x40b9d9[0x5]+'\x20'+_0x1a2ade[_0x40b9d9[0x6]]+'\x20'+_0x40b9d9[0x7]+_0x10dfea(0x261);return _0x23fadd;}function displayIslamicDate(){const _0x510d06=_0x2af7fa,_0x4cfc30=document[_0x510d06(0x1d1)]('outputTable'),_0x5a384c=0x0;_0x4cfc30[_0x510d06(0x20f)]=writeIslamicDate(_0x5a384c);}displayIslamicDate();function isLeapYear(_0x5876e2){return _0x5876e2%0x4===0x0&&_0x5876e2%0x64!==0x0||_0x5876e2%0x190===0x0?!![]:![];}const currentYear=new Date()['getFullYear'](),yearElement=document['getElementById'](_0x2af7fa(0x26f)),resultTextElement=document[_0x2af7fa(0x1d1)](_0x2af7fa(0x1c8));isLeapYear(currentYear)?(yearElement[_0x2af7fa(0x1da)]=currentYear,resultTextElement['textContent']=_0x2af7fa(0x258)):(yearElement[_0x2af7fa(0x1da)]=currentYear,resultTextElement[_0x2af7fa(0x1da)]='Is\x20Not\x20a\x20Leap\x20Year',resultTextElement['style'][_0x2af7fa(0x1ee)]=_0x2af7fa(0x2a0));$(document)[_0x2af7fa(0x1e0)](function(){const _0xd59e4e=_0x2af7fa;$(_0xd59e4e(0x210))['on'](_0xd59e4e(0x1d9),function(){const _0x489d6e=_0xd59e4e;$(_0x489d6e(0x210))[_0x489d6e(0x237)]('active-item'),$(this)[_0x489d6e(0x236)](_0x489d6e(0x225));});});function limitxInput(){const _0x1b8da7=_0x2af7fa;var _0x20f065=document[_0x1b8da7(0x1d1)](_0x1b8da7(0x2a1))['value'];_0x20f065['length']>0x4&&(alert(_0x1b8da7(0x283)),document[_0x1b8da7(0x1d1)](_0x1b8da7(0x2a1))['value']=_0x20f065[_0x1b8da7(0x26d)](0x0,0x4)),_0x20f065==='9999'&&(document[_0x1b8da7(0x1d1)](_0x1b8da7(0x2a1))[_0x1b8da7(0x1c0)]='9');}function limitxxInput(){const _0x42c197=_0x2af7fa;var _0x131e36=document['getElementById'](_0x42c197(0x218))['value'];_0x131e36[_0x42c197(0x1c3)]>0x4&&(alert(_0x42c197(0x283)),document[_0x42c197(0x1d1)](_0x42c197(0x218))[_0x42c197(0x1c0)]=_0x131e36[_0x42c197(0x26d)](0x0,0x4)),_0x131e36===_0x42c197(0x273)&&(document[_0x42c197(0x1d1)](_0x42c197(0x218))[_0x42c197(0x1c0)]='9');}function limitInput(){const _0x4f7af8=_0x2af7fa;var _0x47a4b4=document[_0x4f7af8(0x1d1)](_0x4f7af8(0x299))[_0x4f7af8(0x1c0)];_0x47a4b4[_0x4f7af8(0x1c3)]>0x4&&(alert(_0x4f7af8(0x283)),document[_0x4f7af8(0x1d1)](_0x4f7af8(0x299))['value']=_0x47a4b4[_0x4f7af8(0x26d)](0x0,0x4)),_0x47a4b4===_0x4f7af8(0x273)&&(document[_0x4f7af8(0x1d1)](_0x4f7af8(0x299))[_0x4f7af8(0x1c0)]='9');}var startppYearpp=0x0,onepp_daypp=0x3e8*0x3c*0x3c*0x18,daysppPerppMonthpp=[0x1f,0x1f,0x1f,0x1f,0x1f,0x1e,0x1e,0x1e,0x1e,0x1e,0x1e,0x1e],monthppNamespp=[_0x2af7fa(0x240),'Vaisakh\x20(2)',_0x2af7fa(0x249),_0x2af7fa(0x1d3),_0x2af7fa(0x1f5),_0x2af7fa(0x22c),_0x2af7fa(0x24d),'Katak\x20(8)',_0x2af7fa(0x1f3),'Poh\x20(10)','Magh\x20(11)',_0x2af7fa(0x1c5)],nanakshahiWeekdays=[_0x2af7fa(0x239),'Somvar','Mangalvar',_0x2af7fa(0x248),_0x2af7fa(0x1d8),_0x2af7fa(0x214),_0x2af7fa(0x220)],datepp=new Date(),nYearpp=datepp[_0x2af7fa(0x241)](),startppDatepp=new Date(datepp[_0x2af7fa(0x241)](),0x2,0xe);startppDatepp>datepp&&(startppDatepp=new Date(datepp[_0x2af7fa(0x241)]()-0x1,0x2,0xe),nYearpp=datepp[_0x2af7fa(0x241)]()-0x1);var dayspp=Math[_0x2af7fa(0x289)]((datepp[_0x2af7fa(0x230)]()-startppDatepp['getTime']())/onepp_daypp),monthppCountpp=0x0;while(dayspp>daysppPerppMonthpp[monthppCountpp]){dayspp=dayspp-daysppPerppMonthpp[monthppCountpp],monthppCountpp++;}var weekdayIndex=datepp[_0x2af7fa(0x22e)](),weekdayOutput=nanakshahiWeekdays[weekdayIndex],dateOutput=dayspp+'\x20'+monthppNamespp[monthppCountpp]+'\x20'+(nYearpp-startppYearpp+0x39)+_0x2af7fa(0x276);document[_0x2af7fa(0x1d1)](_0x2af7fa(0x256))[_0x2af7fa(0x1da)]=weekdayOutput,document[_0x2af7fa(0x1d1)](_0x2af7fa(0x1c6))['textContent']=dateOutput;const cxYearElement=document['getElementById'](_0x2af7fa(0x1e5)),currentDate=new Date(),cxYear=currentDate['getFullYear']();cxYearElement[_0x2af7fa(0x1da)]=cxYear;const monthsx=[_0x2af7fa(0x292),_0x2af7fa(0x24a),_0x2af7fa(0x252),_0x2af7fa(0x29b),_0x2af7fa(0x1c1),'June',_0x2af7fa(0x295),_0x2af7fa(0x229),_0x2af7fa(0x231),_0x2af7fa(0x202),_0x2af7fa(0x1c7),_0x2af7fa(0x1e4)],daysInMonthx=[0x1f,0x1c,0x1f,0x1e,0x1f,0x1e,0x1f,0x1f,0x1e,0x1f,0x1e,0x1f];for(let i=0x0;i<0xc;i++){const monthxDaysElement=document[_0x2af7fa(0x1d1)](monthsx[i][_0x2af7fa(0x2a2)]()+'Days');monthxDaysElement[_0x2af7fa(0x1da)]=daysInMonthx[i];}const today=new Date(),cvMonth=today['getMonth'](),cvYear=today['getFullYear'](),cvDate=today[_0x2af7fa(0x270)]();function generateCalendar(_0x275ec4,_0x540b90){const _0x5a1f16=_0x2af7fa,_0x45b9ad=document[_0x5a1f16(0x1d1)](_0x5a1f16(0x207)),_0x47645b=document[_0x5a1f16(0x1d1)](_0x5a1f16(0x25d));_0x45b9ad[_0x5a1f16(0x20f)]='';const _0x3655af=[_0x5a1f16(0x292),_0x5a1f16(0x24a),_0x5a1f16(0x252),'April','May',_0x5a1f16(0x284),_0x5a1f16(0x295),_0x5a1f16(0x229),_0x5a1f16(0x231),'October',_0x5a1f16(0x1c7),_0x5a1f16(0x1e4)];_0x47645b['textContent']=_0x3655af[_0x275ec4]+'\x20'+_0x540b90;const _0x44c1ac=new Date(_0x540b90,_0x275ec4,0x1),_0x3e794d=new Date(_0x540b90,_0x275ec4+0x1,0x0),_0x43c77d=_0x3e794d[_0x5a1f16(0x270)]();let _0x529a8b=0x1;for(let _0x5954d9=0x0;_0x5954d9<0x6;_0x5954d9++){const _0x120c19=document[_0x5a1f16(0x291)]('tr');for(let _0x17dfe7=0x0;_0x17dfe7<0x7;_0x17dfe7++){const _0x2d5b6a=document['createElement']('td');_0x5954d9===0x0&&_0x17dfe7<_0x44c1ac[_0x5a1f16(0x22e)]()||_0x529a8b>_0x43c77d?_0x2d5b6a[_0x5a1f16(0x1da)]='':(_0x2d5b6a[_0x5a1f16(0x1da)]=_0x529a8b,_0x529a8b++,_0x529a8b-0x1===cvDate&&_0x275ec4===cvMonth&&_0x540b90===cvYear&&_0x2d5b6a[_0x5a1f16(0x234)]['add'](_0x5a1f16(0x260))),_0x120c19['appendChild'](_0x2d5b6a);}_0x45b9ad['appendChild'](_0x120c19);if(_0x529a8b>_0x43c77d)break;}}generateCalendar(cvMonth,cvYear),document[_0x2af7fa(0x1d1)]('myButton')[_0x2af7fa(0x246)](_0x2af7fa(0x1d9),function(_0x471c7d){_0x471c7d['preventDefault']();}),document['getElementById'](_0x2af7fa(0x221))['addEventListener']('click',function(_0x1986b9){const _0x41ae3f=_0x2af7fa;_0x1986b9[_0x41ae3f(0x1ec)]();}),Hijri['CYear'][_0x2af7fa(0x1c0)]=year_full,Hijri['CMonth']['value']=month,Hijri[_0x2af7fa(0x1f2)][_0x2af7fa(0x1c0)]=daym,GregToIsl(Hijri);function intPart(_0x19edd1){const _0x904034=_0x2af7fa;if(_0x19edd1<-1e-7)return Math[_0x904034(0x289)](_0x19edd1-1e-7);return Math[_0x904034(0x201)](_0x19edd1+1e-7);}function GregToIsl(_0x24d384){const _0xca7d96=_0x2af7fa;if(gvalidate()==![])return![];d=parseInt(_0x24d384[_0xca7d96(0x1f2)][_0xca7d96(0x1c0)]),m=parseInt(_0x24d384[_0xca7d96(0x242)]['value']),y=parseInt(_0x24d384[_0xca7d96(0x277)][_0xca7d96(0x1c0)]),delta=0x0;y>0x62e||y==0x62e&&m>0xa||y==0x62e&&m==0xa&&d>0xe?jd=intPart(0x5b5*(y+0x12c0+intPart((m-0xe)/0xc))/0x4)+intPart(0x16f*(m-0x2-0xc*intPart((m-0xe)/0xc))/0xc)-intPart(0x3*intPart((y+0x1324+intPart((m-0xe)/0xc))/0x64)/0x4)+d-0x7d4b+delta:jd=0x16f*y-intPart(0x7*(y+0x1389+intPart((m-0x9)/0x7))/0x4)+intPart(0x113*m/0x9)+d+0x1a64f1+delta;jd1=jd-delta,l=jd-0x1dbb18+0x2988,n=intPart((l-0x1)/0x2987),l=l-0x2987*n+0x162,j=intPart((0x2ae9-l)/0x14c4)*intPart(0x32*l/0x4537)+intPart(l/0x1626)*intPart(0x2b*l/0x3b86),l=l-intPart((0x1e-j)/0xf)*intPart(0x4537*j/0x32)-intPart(j/0x10)*intPart(0x3b86*j/0x2b)+0x1d,m=intPart(0x18*l/0x2c5),d=l-intPart(0x2c5*m/0x18),y=0x1e*n+j-0x1e,_0x24d384[_0xca7d96(0x2a5)]['value']=d,_0x24d384[_0xca7d96(0x27a)]['value']=m,_0x24d384['HYear']['value']=y;var _0x2f589a=_0xca7d96(0x205)+parseInt(_0x24d384['CDay'][_0xca7d96(0x1c0)])+_0xca7d96(0x262)+monthNames[parseInt(_0x24d384[_0xca7d96(0x242)][_0xca7d96(0x1c0)])-0x1]+_0xca7d96(0x29d)+parseInt(_0x24d384[_0xca7d96(0x277)][_0xca7d96(0x1c0)])+_0xca7d96(0x21c),_0x4d5b9d='<span\x20id=\x27datex\x27>'+d+_0xca7d96(0x2a4)+hijriMonthNames[m-0x1]+_0xca7d96(0x29d)+y+_0xca7d96(0x27b);document[_0xca7d96(0x1d1)](_0xca7d96(0x1e7))['innerHTML']=_0xca7d96(0x22f)+weekDay(jd1%0x7)+_0xca7d96(0x20a)+_0x2f589a+_0xca7d96(0x216)+_0x4d5b9d+'</span>';}function IslToGreg(_0x53637e){const _0x3a8428=_0x2af7fa;if(hvalidate()==![])return![];d=parseInt(_0x53637e['HDay']['value']),m=parseInt(_0x53637e[_0x3a8428(0x27a)][_0x3a8428(0x1c0)]),y=parseInt(_0x53637e[_0x3a8428(0x265)]['value']),jd=intPart((0xb*y+0x3)/0x1e)+0x162*y+0x1e*m-intPart((m-0x1)/0x2)+d+0x1dbb18-0x181-delta;jd>0x231518?(l=jd+0x10bd9,n=intPart(0x4*l/0x23ab1),l=l-intPart((0x23ab1*n+0x3)/0x4),i=intPart(0xfa0*(l+0x1)/0x164b09),l=l-intPart(0x5b5*i/0x4)+0x1f,j=intPart(0x50*l/0x98f),d=l-intPart(0x98f*j/0x50),l=intPart(j/0xb),m=j+0x2-0xc*l,y=0x64*(n-0x31)+i+l):(j=jd+0x57a,k=intPart((j-0x1)/0x5b5),l=j-0x5b5*k,n=intPart((l-0x1)/0x16d)-intPart(l/0x5b5),i=l-0x16d*n+0x1e,j=intPart(0x50*i/0x98f),d=i-intPart(0x98f*j/0x50),i=intPart(j/0xb),m=j+0x2-0xc*i,y=0x4*k+n+i-0x126c);_0x53637e[_0x3a8428(0x1f2)]['value']=d,_0x53637e[_0x3a8428(0x242)][_0x3a8428(0x1c0)]=m,_0x53637e['CYear'][_0x3a8428(0x1c0)]=y;var _0x23aa3a=_0x3a8428(0x280)+parseInt(_0x53637e[_0x3a8428(0x2a5)][_0x3a8428(0x1c0)])+_0x3a8428(0x262)+hijriMonthNames[parseInt(_0x53637e[_0x3a8428(0x27a)][_0x3a8428(0x1c0)])-0x1]+_0x3a8428(0x29d)+parseInt(_0x53637e[_0x3a8428(0x265)][_0x3a8428(0x1c0)])+_0x3a8428(0x27b),_0x39d2ac=_0x3a8428(0x269)+d+_0x3a8428(0x2a4)+monthNames[m-0x1]+_0x3a8428(0x29d)+y+_0x3a8428(0x27b);document[_0x3a8428(0x1d1)](_0x3a8428(0x1bc))[_0x3a8428(0x20f)]=_0x3a8428(0x24c)+weekDay(jd%0x7)+_0x3a8428(0x1e2)+_0x23aa3a+_0x3a8428(0x1d7)+_0x39d2ac+_0x3a8428(0x27b);}Hijri['CYear'][_0x2af7fa(0x1c0)]=year_full,Hijri[_0x2af7fa(0x242)]['value']=month,Hijri[_0x2af7fa(0x1f2)][_0x2af7fa(0x1c0)]=daym,GregToIsl(Hijri),IslToGreg(Hijri);var currentpYear=new Date()[_0x2af7fa(0x241)](),startOfYear=new Date(currentpYear,0x0,0x1),currentpDate=new Date(),daysPassed=Math['floor']((currentpDate-startOfYear)/(0x18*0x3c*0x3c*0x3e8)),daysRemaining=0x16d-daysPassed,firstDayOfYear=new Date(currentpYear,0x0,0x1),lastDayOfYear=new Date(currentpYear,0xb,0x1f),daysOfWeek=[_0x2af7fa(0x209),_0x2af7fa(0x215),_0x2af7fa(0x238),'Wednesday',_0x2af7fa(0x1cd),_0x2af7fa(0x28b),_0x2af7fa(0x275)],firstWeekday=daysOfWeek[firstDayOfYear[_0x2af7fa(0x22e)]()],lastWeekday=daysOfWeek[lastDayOfYear['getDay']()],currentpMonth=new Date()['toLocaleString']('default',{'month':_0x2af7fa(0x282)}),firstDayOfMonth=new Date(currentpYear,new Date()[_0x2af7fa(0x253)](),0x1),lastDayOfMonth=new Date(currentpYear,new Date()['getMonth']()+0x1,0x0),firstDayWeekday=daysOfWeek[firstDayOfMonth[_0x2af7fa(0x22e)]()],lastDayWeekday=daysOfWeek[lastDayOfMonth[_0x2af7fa(0x22e)]()],weeksPassed=Math[_0x2af7fa(0x201)](daysPassed/0x7),currentpWeek=Math[_0x2af7fa(0x201)]((daysPassed+0x1)/0x7),weeksRemaining=Math[_0x2af7fa(0x201)](daysRemaining/0x7);document[_0x2af7fa(0x1d1)](_0x2af7fa(0x1cc))[_0x2af7fa(0x1da)]=currentpYear,document[_0x2af7fa(0x1d1)](_0x2af7fa(0x267))['textContent']=daysPassed,document[_0x2af7fa(0x1d1)](_0x2af7fa(0x1d4))[_0x2af7fa(0x1da)]=daysRemaining,document[_0x2af7fa(0x1d1)]('yearInfo')['textContent']=currentpYear,document[_0x2af7fa(0x1d1)](_0x2af7fa(0x257))['textContent']=firstWeekday,document['getElementById'](_0x2af7fa(0x1de))[_0x2af7fa(0x1da)]=lastWeekday,document[_0x2af7fa(0x1d1)](_0x2af7fa(0x20d))[_0x2af7fa(0x1da)]=currentpMonth,document['getElementById']('firstDayOfMonth')[_0x2af7fa(0x1da)]=firstDayWeekday,document[_0x2af7fa(0x1d1)](_0x2af7fa(0x268))['textContent']=lastDayWeekday,document[_0x2af7fa(0x1d1)](_0x2af7fa(0x293))[_0x2af7fa(0x1da)]=currentpYear,document[_0x2af7fa(0x1d1)](_0x2af7fa(0x25a))[_0x2af7fa(0x1da)]=weeksPassed,document[_0x2af7fa(0x1d1)](_0x2af7fa(0x22b))[_0x2af7fa(0x1da)]=currentpWeek,document[_0x2af7fa(0x1d1)](_0x2af7fa(0x28c))[_0x2af7fa(0x1da)]=weeksRemaining;var currentbDate=new Date(),currentbDayOfYear=Math[_0x2af7fa(0x201)]((currentbDate-new Date(currentbDate[_0x2af7fa(0x241)](),0x0,0x0))/0x5265c00);document[_0x2af7fa(0x1d1)](_0x2af7fa(0x25c))['textContent']=currentbDayOfYear;function showAlert(_0x4c930f,_0x3439af){const _0x1103dc=_0x2af7fa;Swal[_0x1103dc(0x26a)]({'title':_0x1103dc(0x26e)+_0x4c930f+_0x1103dc(0x27b),'html':_0x1103dc(0x1f8)+_0x3439af+'</span>','icon':_0x1103dc(0x1fd),'confirmButtonClass':'btn\x20btn-primary\x20btn-block','confirmButtonText':'OK','width':_0x1103dc(0x212),'customClass':{'confirmButton':_0x1103dc(0x21f)},'timer':0x1388,'showConfirmButton':!![]});}function removeBlankLines(){const _0x216d5d=_0x2af7fa,_0x1404b9=document[_0x216d5d(0x1d1)](_0x216d5d(0x1c4)),_0x2e306c=_0x1404b9[_0x216d5d(0x1c0)],_0x3f7950=_0x2e306c[_0x216d5d(0x1cb)]('\x0a')[_0x216d5d(0x21e)](_0x30f9c3=>_0x30f9c3[_0x216d5d(0x1ca)]()!=='');_0x1404b9['value']=_0x3f7950[_0x216d5d(0x28d)]('\x0a'),showAlert('Blank\x20Lines\x20Removed!',_0x216d5d(0x1fe),_0x216d5d(0x1fd));}function removeLeadingSpaces(){const _0x3abe45=_0x2af7fa,_0xf2e6b9=document[_0x3abe45(0x1d1)](_0x3abe45(0x1c4));_0xf2e6b9['value']=_0xf2e6b9[_0x3abe45(0x1c0)][_0x3abe45(0x1e8)](/^\s+/gm,''),showAlert(_0x3abe45(0x1eb),'Leading\x20spaces\x20have\x20been\x20removed.',_0x3abe45(0x1fd));}function normalizeText(){const _0x4120c7=_0x2af7fa,_0x71d57f=document[_0x4120c7(0x1d1)](_0x4120c7(0x1c4)),_0x4fa434=_0x71d57f['value'],_0x30fc6e=_0x4fa434[_0x4120c7(0x1cb)]('\x0a')[_0x4120c7(0x235)](_0x1c3a4d=>_0x1c3a4d['trim']());_0x71d57f[_0x4120c7(0x1c0)]=_0x30fc6e[_0x4120c7(0x28d)]('\x20'),showAlert(_0x4120c7(0x1f4),_0x4120c7(0x1df),_0x4120c7(0x1fd));}function encodeHTML(){const _0x4c21eb=_0x2af7fa,_0x20f5c3=document[_0x4c21eb(0x1d1)]('textArea'),_0x2cbef1=_0x20f5c3[_0x4c21eb(0x1c0)];_0x20f5c3[_0x4c21eb(0x1c0)]=escapeHtml(_0x2cbef1),showAlert(_0x4c21eb(0x28f),'HTML\x20entities\x20have\x20been\x20encoded.',_0x4c21eb(0x1fd));}function decodeHTML(){const _0x4be878=_0x2af7fa,_0x423915=document[_0x4be878(0x1d1)]('textArea'),_0x35fc9d=_0x423915['value'];_0x423915[_0x4be878(0x1c0)]=unescapeHtml(_0x35fc9d),showAlert(_0x4be878(0x1d0),_0x4be878(0x271),_0x4be878(0x1fd));}function convertToList(_0xd04441){const _0x395271=_0x2af7fa,_0x485b33=document[_0x395271(0x1d1)](_0x395271(0x1c4)),_0x82796a=_0x485b33[_0x395271(0x1c0)];let _0x264a5c=_0x82796a;if(_0xd04441==='ul')_0x264a5c=_0x82796a[_0x395271(0x1cb)]('\x0a')[_0x395271(0x235)](_0x282351=>'•\x20'+_0x282351)[_0x395271(0x28d)]('\x0a');else{if(_0xd04441==='ol'){let _0x107730=0x1;_0x264a5c=_0x82796a['split']('\x0a')['map'](_0x5530ec=>_0x107730++ +_0x395271(0x20b)+_0x5530ec)[_0x395271(0x28d)]('\x0a');}}_0x485b33[_0x395271(0x1c0)]=_0x264a5c,showAlert('List\x20Conversion!',_0x395271(0x23d)+(_0xd04441==='ol'?'01\x20:\x20List':_0x395271(0x27f))+'.',_0x395271(0x1fd));}function escapeHtml(_0x12320b){const _0x529932=_0x2af7fa,_0x22de4d=document[_0x529932(0x291)](_0x529932(0x287));return _0x22de4d[_0x529932(0x25e)]=_0x12320b,_0x22de4d[_0x529932(0x20f)];}function unescapeHtml(_0x23188d){const _0x57bf92=_0x2af7fa,_0x18d76d=document[_0x57bf92(0x291)]('div');return _0x18d76d['innerHTML']=_0x23188d,_0x18d76d['innerText'];}function copyText(){const _0x4f4a86=_0x2af7fa,_0x50fabf=document[_0x4f4a86(0x1d1)]('textArea');_0x50fabf['select'](),document[_0x4f4a86(0x27d)](_0x4f4a86(0x1d6)),showAlert('Text\x20Copied!','The\x20text\x20has\x20been\x20copied\x20to\x20the\x20clipboard.',_0x4f4a86(0x1fd));}function removeCssComments(){const _0x3bbc31=_0x2af7fa,_0x18ef98=document[_0x3bbc31(0x1d1)](_0x3bbc31(0x1c4)),_0x4649b2=_0x18ef98[_0x3bbc31(0x1c0)],_0x39f36e=_0x4649b2['replace'](/\/\*[\s\S]*?\*\//g,'');_0x18ef98[_0x3bbc31(0x1c0)]=_0x39f36e,showAlert(_0x3bbc31(0x281),'CSS\x20comments\x20have\x20been\x20removed.','success');}function removeHtmlComments(){const _0x5e2cff=_0x2af7fa,_0x43d853=document[_0x5e2cff(0x1d1)](_0x5e2cff(0x1c4)),_0x44439f=_0x43d853[_0x5e2cff(0x1c0)],_0x46a760=_0x44439f[_0x5e2cff(0x1e8)](/<!--[\s\S]*?-->/g,'');_0x43d853['value']=_0x46a760,showAlert(_0x5e2cff(0x281),_0x5e2cff(0x2a7),_0x5e2cff(0x1fd));}function removeJavaScriptComments(){const _0x3add3b=_0x2af7fa,_0x5303ce=document[_0x3add3b(0x1d1)]('textArea'),_0x2aa938=_0x5303ce[_0x3add3b(0x1c0)],_0x35af18=_0x2aa938['replace'](/\/\/[^\n]*|\/\*[\s\S]*?\*\//g,(_0x18cf53,_0x4b4c79)=>{const _0x1b5ba0=_0x3add3b;if(_0x18cf53[_0x1b5ba0(0x1e1)]('/*'))return _0x18cf53;return'';});_0x5303ce[_0x3add3b(0x1c0)]=_0x35af18,showAlert(_0x3add3b(0x281),_0x3add3b(0x233),_0x3add3b(0x1fd));}function removeLists(_0x3fb208){const _0x48dc69=_0x2af7fa,_0x45b628=document[_0x48dc69(0x1d1)]('textArea'),_0x1920ff=_0x45b628[_0x48dc69(0x1c0)];let _0x8f1d3d=_0x1920ff['replace'](/<ul>|<\/ul>|<ol>|<\/ol>|• /g,'');if(_0x3fb208==='ul')_0x8f1d3d=_0x8f1d3d[_0x48dc69(0x1e8)](/<\/?ul>/g,'');else _0x3fb208==='ol'&&(_0x8f1d3d=_0x8f1d3d['replace'](/<\/?ol>/g,''),_0x8f1d3d=_0x8f1d3d[_0x48dc69(0x1e8)](/(\d+ : )/g,''));_0x45b628[_0x48dc69(0x1c0)]=_0x8f1d3d,showAlert('Lists\x20Removed!','<'+_0x3fb208+_0x48dc69(0x228),_0x48dc69(0x1f0));}function beautifyHTML(){const _0x2dda87=_0x2af7fa,_0x3d4a3f=document['getElementById']('textArea'),_0x21de0c=document['getElementById'](_0x2dda87(0x232)),_0x3f3388=parseInt(_0x21de0c[_0x2dda87(0x1c0)]),_0x2179c3=_0x3d4a3f[_0x2dda87(0x1c0)];try{const _0x42c808=html_beautify(_0x2179c3,{'indent_size':_0x3f3388});_0x3d4a3f[_0x2dda87(0x1c0)]=_0x42c808,showAlert(_0x2dda87(0x28e),_0x2dda87(0x247),'success');}catch(_0x4548a2){showAlert('Error',_0x2dda87(0x25b),_0x2dda87(0x219));}}function extractWebKitKeyframesClasses(_0x126382){const _0x17b431=_0x2af7fa,_0x5a5d43=[];let _0xff8e6c=_0x126382['indexOf']('@-webkit-keyframes');while(_0xff8e6c!==-0x1){const _0x14e84d=[];let _0x33a26c=_0xff8e6c;while(_0x33a26c<_0x126382[_0x17b431(0x1c3)]){if(_0x126382[_0x33a26c]==='{')_0x14e84d['push']('{');else{if(_0x126382[_0x33a26c]==='}'){_0x14e84d[_0x17b431(0x29e)]();if(_0x14e84d['length']===0x0){_0x5a5d43['push'](_0x126382[_0x17b431(0x22a)](_0xff8e6c,_0x33a26c+0x1));break;}}}_0x33a26c++;}_0xff8e6c=_0x126382[_0x17b431(0x286)](_0x17b431(0x1d2),_0x33a26c);}return _0x5a5d43;}function removeWebKitKeyframesClasses(_0x644df3){const _0x38360c=_0x2af7fa,_0x5d3729=extractWebKitKeyframesClasses(_0x644df3);for(const _0x1e03ea of _0x5d3729){_0x644df3=_0x644df3['replace'](_0x1e03ea,'');}return _0x644df3=_0x644df3[_0x38360c(0x1e8)](/(-webkit|-ms)[^;]*;/g,''),_0x644df3=_0x644df3['split']('\x0a')[_0x38360c(0x21e)](_0xc544d6=>_0xc544d6[_0x38360c(0x1ca)]()!=='')[_0x38360c(0x28d)]('\x0a'),_0x644df3;}const transformButton=document[_0x2af7fa(0x1d1)](_0x2af7fa(0x1ea)),inputTextArea=document[_0x2af7fa(0x1d1)](_0x2af7fa(0x1be)),outputTextArea=document[_0x2af7fa(0x1d1)]('outputTextArea');transformButton[_0x2af7fa(0x246)](_0x2af7fa(0x1d9),function(){const _0x26a5a7=_0x2af7fa;let _0x5333a0=inputTextArea[_0x26a5a7(0x1c0)];_0x5333a0=removeWebKitKeyframesClasses(_0x5333a0),outputTextArea[_0x26a5a7(0x1c0)]=_0x5333a0;});let isHi=!![];function showAlert(){const _0x488143=_0x2af7fa,_0x5896eb=isHi?_0x488143(0x20c):'Computer\x20Mode\x20OFF';isHi=!isHi,Swal[_0x488143(0x26a)]({'title':_0x5896eb,'icon':_0x488143(0x1fd),'showConfirmButton':![],'timer':0x7d0});}let isHix=!![];function showAlertx(){const _0x3ceaff=_0x2af7fa,_0x52969c=isHi?'Vibrate\x20Mode\x20ON':_0x3ceaff(0x1fb);isHi=!isHi,Swal[_0x3ceaff(0x26a)]({'title':_0x52969c,'icon':_0x3ceaff(0x1fd),'showConfirmButton':![],'timer':0x7d0});}let board=['','','','','','','','',''],currentPlayer='X',playerXWins=0x0,playerOWins=0x0,draws=0x0,computerMode=![],gameResult='',isComputerTurn=![];function toggleComputerMode(){const _0x19fd00=_0x2af7fa;computerMode=document[_0x19fd00(0x1d1)](_0x19fd00(0x2a8))['checked'],computerMode&&currentPlayer==='O'&&gameResult===''&&computerMove();}function resetCellColors(){const _0x1304fe=_0x2af7fa,_0x14d899=document['querySelectorAll'](_0x1304fe(0x264));_0x14d899[_0x1304fe(0x21b)](_0x2afc1e=>_0x2afc1e[_0x1304fe(0x245)]['backgroundColor']='');}function restartGame(){const _0x43f80=_0x2af7fa;board=['','','','','','','','',''],currentPlayer='X',gameResult='',resetCellColors(),document[_0x43f80(0x1d1)](_0x43f80(0x290))[_0x43f80(0x1da)]=_0x43f80(0x227),updateDisplay(),isComputerTurn=![];}function newGame(){playerXWins=0x0,playerOWins=0x0,draws=0x0,restartGame(),updateDisplay();}function undoMove(){const _0x206da1=_0x2af7fa;if(gameResult==='')for(let _0xaa889d=board[_0x206da1(0x1c3)]-0x1;_0xaa889d>=0x0;_0xaa889d--){if(board[_0xaa889d]!==''){board[_0xaa889d]='',currentPlayer=currentPlayer==='X'?'O':'X',updateDisplay();break;}}}function makeMove(_0x1317bc){const _0x5a9372=_0x2af7fa;if(isComputerTurn)return;if(board[_0x1317bc]===''&&gameResult===''){board[_0x1317bc]=currentPlayer;if(checkWin(currentPlayer))gameResult=currentPlayer+'\x20wins!',currentPlayer==='X'?playerXWins++:playerOWins++,highlightWinningCombination(),document[_0x5a9372(0x1d1)](_0x5a9372(0x290))[_0x5a9372(0x1da)]=gameResult,vibrate();else!board[_0x5a9372(0x208)]('')?(gameResult=_0x5a9372(0x1ed),draws++,document[_0x5a9372(0x1d1)]('gameResult')[_0x5a9372(0x1da)]=gameResult,vibrate()):(currentPlayer=currentPlayer==='X'?'O':'X',computerMode&&currentPlayer==='O'&&gameResult===''&&(isComputerTurn=!![],setTimeout(computerMove,0x1f4)));updateDisplay();}}function checkWin(_0x4044f5){const _0x5e9bc7=[[0x0,0x1,0x2],[0x3,0x4,0x5],[0x6,0x7,0x8],[0x0,0x3,0x6],[0x1,0x4,0x7],[0x2,0x5,0x8],[0x0,0x4,0x8],[0x2,0x4,0x6]];for(let _0x45f112 of _0x5e9bc7){if(board[_0x45f112[0x0]]===_0x4044f5&&board[_0x45f112[0x1]]===_0x4044f5&&board[_0x45f112[0x2]]===_0x4044f5)return!![];}return![];}function highlightWinningCombination(){const _0x998496=_0x2af7fa,_0x9cf28c=[[0x0,0x1,0x2],[0x3,0x4,0x5],[0x6,0x7,0x8],[0x0,0x3,0x6],[0x1,0x4,0x7],[0x2,0x5,0x8],[0x0,0x4,0x8],[0x2,0x4,0x6]];for(let _0x2239ae of _0x9cf28c){_0x2239ae[_0x998496(0x1c9)](_0x14f012=>board[_0x14f012]===currentPlayer)&&_0x2239ae[_0x998496(0x21b)](_0x34b4a0=>{const _0x120a9e=_0x998496,_0x1e4abb=document[_0x120a9e(0x297)](_0x120a9e(0x29a)+_0x34b4a0+'\x22]');_0x1e4abb[_0x120a9e(0x245)][_0x120a9e(0x250)]=_0x120a9e(0x2a6),_0x1e4abb['textContent']=currentPlayer;});}}async function computerMove(){const _0x3a8936=_0x2af7fa;if(gameResult===''&&currentPlayer==='O'){isComputerTurn=!![];const _0x5a8699=board[_0x3a8936(0x1fc)]((_0x131a87,_0xdc2c6c,_0x59785f)=>{const _0x56d194=_0x3a8936;return _0xdc2c6c===''&&_0x131a87[_0x56d194(0x255)](_0x59785f),_0x131a87;},[]);if(_0x5a8699[_0x3a8936(0x1c3)]>0x0){const _0x1b76c7=Math[_0x3a8936(0x201)](Math['random']()*_0x5a8699[_0x3a8936(0x1c3)]),_0x3a692e=_0x5a8699[_0x1b76c7];await new Promise(_0x24f6b2=>setTimeout(_0x24f6b2,0x1f4)),board[_0x3a692e]=currentPlayer,updateDisplay();if(checkWin(currentPlayer))gameResult=currentPlayer+_0x3a8936(0x24e),currentPlayer==='X'?playerXWins++:playerOWins++,highlightWinningCombination(),document[_0x3a8936(0x1d1)](_0x3a8936(0x290))['textContent']=gameResult,vibrate();else!board[_0x3a8936(0x208)]('')?(gameResult=_0x3a8936(0x1ed),draws++,document[_0x3a8936(0x1d1)](_0x3a8936(0x290))[_0x3a8936(0x1da)]=gameResult,vibrate()):currentPlayer=currentPlayer==='X'?'O':'X';isComputerTurn=![];}}}function updateDisplay(){const _0xce2f1c=_0x2af7fa;for(let _0x260edc=0x0;_0x260edc<0x9;_0x260edc++){const _0x28cbc7=document[_0xce2f1c(0x297)]('[data-index=\x22'+_0x260edc+'\x22]');_0x28cbc7[_0xce2f1c(0x1da)]=board[_0x260edc];}document['getElementById'](_0xce2f1c(0x1ff))['textContent']=currentPlayer,document[_0xce2f1c(0x1d1)]('playerXWins')[_0xce2f1c(0x1da)]=playerXWins,document[_0xce2f1c(0x1d1)](_0xce2f1c(0x204))[_0xce2f1c(0x1da)]=playerOWins,document['getElementById'](_0xce2f1c(0x223))[_0xce2f1c(0x1da)]=draws;}function vibrate(){const _0x27eb63=_0x2af7fa,_0x25853c=document[_0x27eb63(0x1d1)](_0x27eb63(0x1f1));_0x25853c[_0x27eb63(0x274)]&&_0x27eb63(0x279)in navigator&&navigator[_0x27eb63(0x279)]([0xc8,0x64,0xc8]);}document[_0x2af7fa(0x1d1)](_0x2af7fa(0x1f1))['addEventListener'](_0x2af7fa(0x23e),vibrate),document[_0x2af7fa(0x1d1)]('computerMode')[_0x2af7fa(0x246)](_0x2af7fa(0x23e),toggleComputerMode),updateDisplay();
+</script>
+</body>
+</html>
